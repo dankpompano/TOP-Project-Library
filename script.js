@@ -1,5 +1,6 @@
 const myLibrary = [];
 const listContainer = document.getElementById("item-list");
+// const ul = document.createElement("ul");
 
 function Book(title, author, pages, year, genre) {
   this.title = title;
@@ -11,7 +12,7 @@ function Book(title, author, pages, year, genre) {
 }
 
 function addBookToLibrary(title, author, pages, year, genre) {
-  newBook = Book.new(title, author, pages, year, genre);
+  newBook = new Book(title, author, pages, year, genre);
   myLibrary.push(newBook);
 }
 
@@ -35,5 +36,23 @@ function display(array) {
       book.genre;
     listContainer.appendChild(listItem);
   });
+  // listContainer.appendChild(ul);
 }
-addBookToLibrary("The Hobbit", "JRR Tolkien", "200", "1998", "Fantasy");
+addBookToLibrary("The Silent Echo", "Elena Petrova", 320, 2019, "Mystery");
+addBookToLibrary("Neon Ghosts", "Marcus Vance", 412, 2023, "Science Fiction");
+addBookToLibrary(
+  "Garden of Secrets",
+  "Aisha Khan",
+  150,
+  1998,
+  "Historical Fiction",
+);
+addBookToLibrary(
+  "The Last Algorithm",
+  "Dr. Alan Grant",
+  550,
+  2024,
+  "Tech Thriller",
+);
+
+display(myLibrary);
